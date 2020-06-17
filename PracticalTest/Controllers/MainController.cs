@@ -20,5 +20,10 @@ namespace PracticalTest.Controllers
         {
             return View();
         }
+
+        public IActionResult RegisterNewUser()
+        {
+            return View();
+        }
     }
 }
