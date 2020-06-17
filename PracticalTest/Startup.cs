@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using PracticalTest.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PracticalTest.Models;
 
 namespace PracticalTest
 {
@@ -37,6 +38,11 @@ namespace PracticalTest
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<SMSContext>(options =>
+               options.UseSqlServer(
+                   Configuration.GetConnectionString("MyCS")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
