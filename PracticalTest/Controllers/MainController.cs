@@ -21,6 +21,7 @@ namespace PracticalTest.Controllers
             return View();
         }
 
+        
         [HttpGet]
         public IActionResult RegisterNewUser()
         {
