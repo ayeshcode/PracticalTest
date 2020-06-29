@@ -83,12 +83,20 @@ namespace PracticalTest.Controllers
         {
             if (HttpContext.Session.GetString("UserName") == null)
             {
-
+                return RedirectToAction("Login");
             }
             ViewBag.UserName = HttpContext.Session.GetString("UserName");
             ViewBag.Role = HttpContext.Session.GetString("Role");
             return View();  
         }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+            
+        }
     }
+
 
 }
