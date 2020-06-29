@@ -52,5 +52,12 @@ namespace PracticalTest.Controllers
         {
             return View();
         }
+
+        public IActionResult Login(SystemUsers U)
+
+        {
+            SystemUsers LoggedInUser =  ORM.SystemUsers.Where(x=>x.UserName == U.UserName && x.Password == U.Password).FirstOrDefault();
+            return View();
+        }
     }
 }
