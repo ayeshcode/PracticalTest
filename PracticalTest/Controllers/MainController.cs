@@ -48,15 +48,19 @@ namespace PracticalTest.Controllers
             return View();
         }
 
+
+
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        [HttpPost]
         public IActionResult Login(SystemUsers U)
 
         {
-            SystemUsers LoggedInUser =  ORM.SystemUsers.Where(x=>x.UserName == U.UserName && x.Password == U.Password).FirstOrDefault();
+            SystemUsers LoggedInUser = ORM.SystemUsers.Where(x=>x.UserName == U.UserName && x.Password == U.Password).FirstOrDefault();
 
             if(LoggedInUser == null)
             {
@@ -64,7 +68,7 @@ namespace PracticalTest.Controllers
                 return View();
             }
           
-            return RedirectToAction();
+            return RedirectToAction("Dashboard");
 
             
         }
