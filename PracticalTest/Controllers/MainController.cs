@@ -26,23 +26,8 @@ namespace PracticalTest.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult RegisterNewUser(SystemUsers U)
 
-        {
-            try
-            {
 
-                ORM.SystemUsers.Add(U);
-                ORM.SaveChanges();
-                ViewBag.Message = "User " + U.UserName + "Registratered Successfully.";
-            }
-            catch
-            {
-                ViewBag.Message = "Unable to save new user";
-            }
-
-            return View();
-        }
+       
     }
 }
