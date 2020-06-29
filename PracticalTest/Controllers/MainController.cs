@@ -81,7 +81,7 @@ namespace PracticalTest.Controllers
 
         public IActionResult Dashboard()
         {
-            if (HttpContext.Session.GetString("UserName") == null)
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserName")))
             {
                 return RedirectToAction("Login");
             }
