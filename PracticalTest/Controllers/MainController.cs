@@ -85,6 +85,7 @@ namespace PracticalTest.Controllers
             {
 
             }
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             ViewBag.Role = HttpContext.Session.GetString("Role");
             return View();  
         }
