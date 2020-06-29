@@ -57,6 +57,13 @@ namespace PracticalTest.Controllers
 
         {
             SystemUsers LoggedInUser =  ORM.SystemUsers.Where(x=>x.UserName == U.UserName && x.Password == U.Password).FirstOrDefault();
+
+            if(LoggedInUser == null)
+            {
+                ViewBag.Message = "Wrong User Name";
+                return View();
+            }
+
             return View();
         }
     }
