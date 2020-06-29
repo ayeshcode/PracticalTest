@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PracticalTest.Models;
 
@@ -64,9 +65,13 @@ namespace PracticalTest.Controllers
 
             if(LoggedInUser == null)
             {
-                ViewBag.Message = "Wrong User Name";
+                ViewBag.Message = "Wrong UserName Or Password";
                 return View();
             }
+
+            //save user information in session
+
+            HttpContext.Session.SetString("UserName", U.UserName);
           
             return RedirectToAction("Dashboard");
 
