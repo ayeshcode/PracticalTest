@@ -63,8 +63,16 @@ namespace PracticalTest.Controllers
                 ViewBag.Message = "Wrong User Name";
                 return View();
             }
+          
+            return RedirectToAction();
 
-            return View();
+            
+        }
+
+        public IActionResult Dashboard()
+        {
+            return View();  
         }
     }
+
 }
