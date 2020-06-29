@@ -34,7 +34,8 @@ namespace PracticalTest.Controllers
         {
             try
             {
-
+                U.Role = "Staff";
+                U.Status = "Active";
                 ORM.SystemUsers.Add(U);
                 ORM.SaveChanges();
                 ViewBag.Message = "User " + U.UserName + "Registratered Successfully.";
