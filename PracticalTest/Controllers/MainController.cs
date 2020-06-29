@@ -71,8 +71,9 @@ namespace PracticalTest.Controllers
 
             //save user information in session
 
-            HttpContext.Session.SetString("UserName", U.UserName);
-          
+            HttpContext.Session.SetString("UserName", LoggedInUser.UserName);
+            HttpContext.Session.SetString("Role", LoggedInUser.Role);
+
             return RedirectToAction("Dashboard");
 
             
@@ -80,6 +81,11 @@ namespace PracticalTest.Controllers
 
         public IActionResult Dashboard()
         {
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+
+            }
+            ViewBag.Role = HttpContext.Session.GetString("Role");
             return View();  
         }
     }
