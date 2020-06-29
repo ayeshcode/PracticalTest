@@ -37,14 +37,14 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Main" asp-action="RegisterNewUser">Register New Student</a></li>
 
-                    @if (Context.Session.GetString("UserNAME") == null)
+                    @if (Context.Session.GetString("UserName") == null)
                     {
-                        <li><a asp-area="" asp-controller="Main" asp-action="Logout">LogIN</a></li>
+                        <li><a asp-area="" asp-controller="Main" asp-action="Logout">Login</a></li>
                     
                     }
                     else
                     {
-                        <li><a asp-area="" asp-controller="Main" asp-action="Login">LogIn</a></li>
+                        <li><a asp-area="" asp-controller="Main" asp-action="Logout">Logout</a></li>
                     }
 
 
