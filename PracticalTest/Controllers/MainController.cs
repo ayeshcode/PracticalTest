@@ -11,7 +11,7 @@ namespace PracticalTest.Controllers
 
     {
         SMSContext ORM = null;
-         public MainController(SMSContext _ORM)
+        public MainController(SMSContext _ORM)
         {
             ORM = _ORM;
         }
@@ -21,7 +21,7 @@ namespace PracticalTest.Controllers
             return View();
         }
 
-        
+
         [HttpGet]
         public IActionResult RegisterNewUser()
         {
@@ -48,5 +48,9 @@ namespace PracticalTest.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }
